@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Securely encode and decode your messages with this Encryption & Decryption tool.">
+    <meta name="keywords" content="encryption, decryption, security, messages, encode, decode">
+    <meta name="author" content="Alejandro Loaiza">
+    <title>SecureText: Encryption & Decryption Tool</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="Material-resets.css">
+
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="row center">
+                <div class="col s12 m10 offset-m1">
+                    <h1 class="header p-heading--display">Encryption & Decryption</h1>
+                </div>
+                <div class="col s12 m8 offset-m2">
+                    <h4 class="light">Securely encode and decode your messages</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <ul class="tabs">
+                        <li class="tab col s6"><a class="active" href="#encryptTab">Encrypt</a></li>
+                        <li class="tab col s6"><a href="#decryptTab">Decrypt</a></li>
+                    </ul>
+                </div>
+                <div id="encryptTab" class="col s12 m8 offset-m2">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input placeholder="MySecret123" id="encryptionKey" type="text" class="validate" required>
+                                    <label for="encryptionKey">Encryption Key</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="encryptText" class="materialize-textarea"></textarea>
+                                    <label for="encryptText">Enter text to encode</label>
+                                </div>
+                                <button id="encryptButton" type="button" class="waves-effect waves-light btn">Encrypt</button>
+                                <div class="input-field col s12">
+                                    <blockquote id="encoded">
+                                        Encoded text will appear here.
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="decryptTab" class="col s12 m8 offset-m2">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input placeholder="MySecret123" id="decryptionKey" type="text" class="validate" required>
+                                    <label for="decryptionKey">Decryption Key</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <textarea id="decryptText" class="materialize-textarea"></textarea>
+                                    <label for="decryptText">Enter text to decode</label>
+                                </div>
+                                <button id="decryptButton" type="button" class="waves-effect waves-light btn">Decrypt</button>
+                                <div class="input-field col s12">
+                                    <blockquote id="decoded">
+                                        Decoded text will appear here.
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/M-init.js"></script>
+</body>
+</html>
